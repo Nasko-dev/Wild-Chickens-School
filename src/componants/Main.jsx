@@ -1,15 +1,21 @@
 import React from "react";
-import chickenTab from "../../chickenTab.json";
 import PersonCard from "./PersonCard";
 import "./Main.css";
+import { useState, useEffect } from "react";
 
 function Main() {
-  const teachers = chickenTab.chickenTab.filter(
-    (person) => person.position === "Teacher"
-  );
-  const students = chickenTab.chickenTab.filter(
-    (person) => person.position === "Student"
-  );
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("https://wild-chicken-api.netlify.app/chickens")
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data);
+      });
+  }, []);
+
+  const teachers = data.filter((person) => person.position === "Teacher");
+  const students = data.filter((person) => person.position === "Student");
 
   return (
     <main>
@@ -42,9 +48,7 @@ function Main() {
           ))}
         </div>
       </div>
-      <div className="footer">
-        
-      </div>
+      <div className="footer"></div>
     </main>
   );
 }

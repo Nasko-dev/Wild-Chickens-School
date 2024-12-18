@@ -1,0 +1,35 @@
+.person-card {
+  display: flex;
+  background-color: #f8f8f8;
+  box-shadow: 9px 8px 5px -6px #414040bf;
+  -webkit-box-shadow: 9px 8px 5px -6px #414040bf;
+  -moz-box-shadow: 9px 8px 5px -6px #414040bf;
+  width: 280px;
+  border-radius: 50px;
+
+  img {
+    border-radius: 100%;
+    width: 100px;
+  }
+  .Texte {
+    position: relative;
+    flex-direction: column;
+    left: 10px;
+    h2 {
+      text-align: start;
+      font-size: 1.2rem;
+      padding: 10px 1px;
+    }
+    h3 {
+      text-align: start;
+      font-size: 1rem;
+      padding-bottom: 5px;
+    }
+    p {
+      text-align: justify;
+      text-align: start;
+      font-size: 13px;
+      max-width: 4cm;
+    }
+  }
+}
